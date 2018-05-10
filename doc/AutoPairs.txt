@@ -324,6 +324,15 @@ When you press the key for the closing pair (e.g. `)`) it jumps past it.
 If set to 1, then it'll jump to the next line, if there is only 'whitespace'.
 If set to 0, then it'll only jump to a closing pair on the same line.
 
+
+                                                         *g:AutoPairsSmartMode*
+|g:AutoPairsSmartMode|                                                      int
+
+Default: 0
+
+When enabled, if the inserted opening pair is followed by `[a-zA-Z0-9_]`, then
+the closing pair will not be auto inserted.
+
 ==============================================================================
 6. Troubleshooting                                 *autopairs-troubleshooting*
 

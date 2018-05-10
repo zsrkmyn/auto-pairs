@@ -198,6 +198,15 @@ endf
 func! AutoPairsInsert(key)
   if !b:autopairs_enabled
     return a:key
+  else
+    let l:cur_c = getline('.')[col('.')-1]
+    if g:AutoPairsSmartMode &&
+          \ (cur_c >= 'a' && cur_c <= 'z' ||
+          \  cur_c >= 'A' && cur_c <= 'Z' ||
+          \  cur_c >= '0' && cur_c <= '9' ||
+          \  cur_c == '_')
+       return a:key
+    end
   end
 
   let b:autopairs_saved_pair = [a:key, getpos('.')]
